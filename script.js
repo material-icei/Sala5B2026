@@ -182,6 +182,166 @@
 })();
 
 
+// ---------- Lightbox pantalla completa ----------
+const openLightbox = (() => {
+  const lightbox   = document.getElementById('lightbox');
+  const lightImg   = document.getElementById('lightboxImg');
+  const counter    = document.getElementById('lightboxCounter');
+  const closeBtn   = lightbox?.querySelector('.lightbox-close');
+  const prevBtn    = lightbox?.querySelector('.lightbox-prev');
+  const nextBtn    = lightbox?.querySelector('.lightbox-next');
+
+  if (!lightbox) return () => {};
+
+  let currentImages = [];
+  let currentIndex  = 0;
+  let lastFocused   = null;
+
+  function render() {
+    const img = currentImages[currentIndex];
+    lightImg.src = img.src;
+    lightImg.alt = img.alt;
+    counter.textContent = currentImages.length > 1
+      ? `${currentIndex + 1} / ${currentImages.length}`
+      : '';
+    prevBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+    nextBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+  }
+
+  function open(images, index) {
+    currentImages = images;
+    currentIndex  = index;
+    lastFocused   = document.activeElement;
+    render();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    render();
+  }
+  function prev() {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    render();
+  }
+
+  closeBtn.addEventListener('click', close);
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  // Cerrar al hacer clic fuera de la imagen
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  // Navegación y cierre por teclado
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  return open;
+})();
+
+
+// ---------- Timeline photo carousels ----------
+(function initTimelineCarousels() {
+  const AUTO_DELAY = 4500; // ms entre cambios automáticos
+
+  document.querySelectorAll('.tl-carousel').forEach((carousel) => {
+    const images = Array.from(carousel.querySelectorAll('.tl-carousel-img'));
+    const dots   = Array.from(carousel.querySelectorAll('.tl-dot-btn'));
+    const prevBtn = carousel.querySelector('.tl-carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.tl-carousel-btn.next');
+
+    if (images.length <= 1) {
+      // Nada que rotar; ocultamos controles si sobran
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+    }
+
+    let current = 0;
+    let timer = null;
+
+    function show(index) {
+      current = (index + images.length) % images.length;
+      images.forEach((img, i) => img.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    function next() { show(current + 1); }
+    function prev() { show(current - 1); }
+
+    function startAuto() {
+      if (images.length <= 1) return;
+      stopAuto();
+      timer = setInterval(next, AUTO_DELAY);
+    }
+    function stopAuto() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+    function restartAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    prevBtn?.addEventListener('click', () => { prev(); restartAuto(); });
+    nextBtn?.addEventListener('click', () => { next(); restartAuto(); });
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        show(parseInt(dot.dataset.index, 10) || 0);
+        restartAuto();
+      });
+    });
+
+    // Clic (o Enter) en la foto: abrir en pantalla completa
+    images.forEach((img, i) => {
+      img.addEventListener('click', () => {
+        stopAuto();
+        openLightbox(images, i);
+      });
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          stopAuto();
+          openLightbox(images, i);
+        }
+      });
+    });
+
+    // Pausa al pasar el mouse o el foco (accesibilidad)
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    carousel.addEventListener('focusin', stopAuto);
+    carousel.addEventListener('focusout', startAuto);
+
+    // Pausa cuando la tarjeta no está visible (ahorra recursos)
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) startAuto();
+        else stopAuto();
+      });
+    }, { threshold: 0.2 });
+    visibilityObserver.observe(carousel);
+
+    show(0);
+  });
+})();
+
+
 // ---------- Smooth scroll for hero CTA ----------
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
