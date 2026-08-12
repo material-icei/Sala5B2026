@@ -200,7 +200,7 @@
   </section>
 
   
-  <!-- TIMELINE de civilizaciones -->
+ <!-- TIMELINE de civilizaciones -->
   <section class="timeline-section">
     <div class="container">
       <h2 class="section-title">
@@ -213,6 +213,18 @@
           <div class="tl-content">
             <strong>Prehistoria</strong>
             <span>Los primeros humanos</span>
+            <div class="tl-carousel" data-civ="prehistoria">
+              <div class="tl-carousel-track">
+                <img src="prehistoria1.jpg" alt="Prehistoria - foto 1" class="tl-carousel-img active" loading="lazy" tabindex="0">
+                <img src="prehistoria2.jpg" alt="Prehistoria - foto 2" class="tl-carousel-img" loading="lazy" tabindex="0">
+              </div>
+              <button type="button" class="tl-carousel-btn prev" aria-label="Foto anterior">‹</button>
+              <button type="button" class="tl-carousel-btn next" aria-label="Foto siguiente">›</button>
+              <div class="tl-carousel-dots">
+                <button type="button" class="tl-dot-btn active" data-index="0" aria-label="Ir a foto 1"></button>
+                <button type="button" class="tl-dot-btn" data-index="1" aria-label="Ir a foto 2"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tl-item" data-delay="1">
@@ -220,6 +232,18 @@
           <div class="tl-content">
             <strong>Antiguo Egipto</strong>
             <span>Faraones y pirámides</span>
+            <div class="tl-carousel" data-civ="egipto">
+              <div class="tl-carousel-track">
+                <img src="egipto1.jpg" alt="Antiguo Egipto - foto 1" class="tl-carousel-img active" loading="lazy" tabindex="0">
+                <img src="egipto2.jpg" alt="Antiguo Egipto - foto 2" class="tl-carousel-img" loading="lazy" tabindex="0">
+              </div>
+              <button type="button" class="tl-carousel-btn prev" aria-label="Foto anterior">‹</button>
+              <button type="button" class="tl-carousel-btn next" aria-label="Foto siguiente">›</button>
+              <div class="tl-carousel-dots">
+                <button type="button" class="tl-dot-btn active" data-index="0" aria-label="Ir a foto 1"></button>
+                <button type="button" class="tl-dot-btn" data-index="1" aria-label="Ir a foto 2"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tl-item" data-delay="2">
@@ -227,6 +251,20 @@
           <div class="tl-content">
             <strong>Grecia</strong>
             <span>Dioses y filósofos</span>
+            <div class="tl-carousel" data-civ="grecia">
+              <div class="tl-carousel-track">
+                <img src="grecia1.jpg" alt="Grecia - foto 1" class="tl-carousel-img active" loading="lazy" tabindex="0">
+                <img src="grecia2.jpg" alt="Grecia - foto 2" class="tl-carousel-img" loading="lazy" tabindex="0">
+                <img src="grecia3.jpg" alt="Grecia - foto 3" class="tl-carousel-img" loading="lazy" tabindex="0">
+              </div>
+              <button type="button" class="tl-carousel-btn prev" aria-label="Foto anterior">‹</button>
+              <button type="button" class="tl-carousel-btn next" aria-label="Foto siguiente">›</button>
+              <div class="tl-carousel-dots">
+                <button type="button" class="tl-dot-btn active" data-index="0" aria-label="Ir a foto 1"></button>
+                <button type="button" class="tl-dot-btn" data-index="1" aria-label="Ir a foto 2"></button>
+                <button type="button" class="tl-dot-btn" data-index="2" aria-label="Ir a foto 3"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tl-item" data-delay="3">
@@ -234,6 +272,18 @@
           <div class="tl-content">
             <strong>Roma</strong>
             <span>Emperadores y coliseos</span>
+            <div class="tl-carousel" data-civ="roma">
+              <div class="tl-carousel-track">
+                <img src="roma1.png" alt="Roma - foto 1" class="tl-carousel-img active" loading="lazy" tabindex="0">
+                <img src="roma2.jpg" alt="Roma - foto 2" class="tl-carousel-img" loading="lazy" tabindex="0">
+              </div>
+              <button type="button" class="tl-carousel-btn prev" aria-label="Foto anterior">‹</button>
+              <button type="button" class="tl-carousel-btn next" aria-label="Foto siguiente">›</button>
+              <div class="tl-carousel-dots">
+                <button type="button" class="tl-dot-btn active" data-index="0" aria-label="Ir a foto 1"></button>
+                <button type="button" class="tl-dot-btn" data-index="1" aria-label="Ir a foto 2"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -250,6 +300,15 @@
       <div class="footer-emojis">🦴 🐫 🏛️ ⚔️</div>
     </div>
   </footer>
+
+  <!-- LIGHTBOX pantalla completa -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Cerrar">✕</button>
+    <button type="button" class="lightbox-btn lightbox-prev" aria-label="Foto anterior">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <button type="button" class="lightbox-btn lightbox-next" aria-label="Foto siguiente">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
