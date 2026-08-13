@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adivinanzas de los Dioses · Tesoros del Pasado · ICEI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="adivinanzas-styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="adiv-body">
+
+  <!-- Partículas de fondo (mismo efecto que la landing) -->
+  <div class="particles" id="particles"></div>
+
+  <!-- MINI HERO -->
+  <header class="adiv-hero">
+    <a href="../index.html" class="adiv-back">← Volver a Tesoros del Pasado</a>
+
+    <div class="adiv-hero-deco deco-a">⚡</div>
+    <div class="adiv-hero-deco deco-b">🦉</div>
+    <div class="adiv-hero-deco deco-c">🔱</div>
+    <div class="adiv-hero-deco deco-d">🌊</div>
+
+    <div class="adiv-hero-content">
+      <p class="school-tag">🏛️ Sala de 5 años "B" · Colegio ICEI</p>
+      <h1 class="adiv-title">
+        <span>¿Quién soy?</span>
+        <span class="adiv-title-sub">Adivinanzas de los Dioses Griegos</span>
+      </h1>
+      <p class="adiv-subtitle">
+        Escuchá con atención cada pergamino sonoro 📜🔊<br/>
+        y después dale vuelta a la tarjeta para descubrir quién es.
+      </p>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg-main)"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- GRID DE ADIVINANZAS -->
+  <main class="adiv-main">
+    <div class="container">
+
+      <div class="adiv-grid">
+
+        <!-- ADIVINANZA 1 · ZEUS -->
+        <div class="riddle-card" data-riddle="1">
+          <div class="riddle-inner">
+
+            <div class="riddle-face riddle-front">
+              <div class="riddle-number">I</div>
+              <span class="riddle-icon">⚡</span>
+              <h2 class="riddle-label">Adivinanza 1</h2>
+                   <audio class="riddle-audio" controls preload="none">
+                <source src="zeus.mp3" type="audio/mpeg" />
+              </audio>
+              <button type="button" class="riddle-flip-btn">
+                <span>🔍 Ver quién es</span>
+              </button>
+            </div>
+
+            <div class="riddle-face riddle-back">
+              <div class="riddle-img-carousel">
+                <div class="riddle-img-track">
+                  <img src="zeus.jpeg" alt="Dibujo de Zeus - producción 1" class="riddle-carousel-img active" />
+                  <img src="zeus2.jpeg" alt="Dibujo de Zeus - producción 2" class="riddle-carousel-img" />
+                </div>
+                <button type="button" class="riddle-carousel-btn prev" aria-label="Dibujo anterior">‹</button>
+                <button type="button" class="riddle-carousel-btn next" aria-label="Dibujo siguiente">›</button>
+                <div class="riddle-carousel-dots">
+                  <button type="button" class="riddle-dot-btn active" data-index="0" aria-label="Ver dibujo 1"></button>
+                  <button type="button" class="riddle-dot-btn" data-index="1" aria-label="Ver dibujo 2"></button>
+                </div>
+              </div>
+              <h3 class="riddle-answer-name">¡Soy Zeus! ⚡</h3>
+              <p class="riddle-answer-fact">Dios del cielo y el trueno, rey del Olimpo.</p>
+              <button type="button" class="riddle-flip-btn riddle-flip-back">
+                <span>↩ Volver</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ADIVINANZA 2 · ATENEA -->
+        <div class="riddle-card" data-riddle="2">
+          <div class="riddle-inner">
+
+            <div class="riddle-face riddle-front">
+              <div class="riddle-number">II</div>
+              <span class="riddle-icon">🦉</span>
+              <h2 class="riddle-label">Adivinanza 2</h2>
+             
+              <audio class="riddle-audio" controls preload="none">
+                <source src="Atenea.mp4" type="audio/mpeg" />
+              </audio>
+              <button type="button" class="riddle-flip-btn">
+                <span>🔍 Ver quién es</span>
+              </button>
+            </div>
+
+           <div class="riddle-face riddle-back">
+              <div class="riddle-img-carousel">
+                <div class="riddle-img-track">
+                  <img src="atenea.jpeg" alt="Dibujo de Zeus - producción 1" class="riddle-carousel-img active" />
+                  <img src="zeus2.jpeg" alt="Dibujo de Zeus - producción 2" class="riddle-carousel-img" />
+                </div>
+                <button type="button" class="riddle-carousel-btn prev" aria-label="Dibujo anterior">‹</button>
+                <button type="button" class="riddle-carousel-btn next" aria-label="Dibujo siguiente">›</button>
+                <div class="riddle-carousel-dots">
+                  <button type="button" class="riddle-dot-btn active" data-index="0" aria-label="Ver dibujo 1"></button>
+                  <button type="button" class="riddle-dot-btn" data-index="1" aria-label="Ver dibujo 2"></button>
+                </div>
+              </div>
+              <h3 class="riddle-answer-name">¡Soy Atenea! 🦉</h3>
+              <p class="riddle-answer-fact">Diosa de la sabiduría y la estrategia.</p>
+              <button type="button" class="riddle-flip-btn riddle-flip-back">
+                <span>↩ Volver</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ADIVINANZA 3 · PARTENÓN -->
+        <div class="riddle-card" data-riddle="2">
+          <div class="riddle-inner">
+
+            <div class="riddle-face riddle-front">
+              <div class="riddle-number">III</div>
+              <span class="riddle-icon">🏦</span>
+              <h2 class="riddle-label">Adivinanza 3</h2>
+             
+              <audio class="riddle-audio" controls preload="none">
+                <source src="Partenon.mp4" type="audio/mpeg" />
+              </audio>
+              <button type="button" class="riddle-flip-btn">
+                <span>🔍 Ver qué es</span>
+              </button>
+            </div>
+
+           <div class="riddle-face riddle-back">
+              <div class="riddle-img-carousel">
+                <div class="riddle-img-track">
+                   <!-- agregar imagenessssssssssss PARTENÓN -->
+                  <img src="atenea.jpeg" alt="Dibujo de Zeus - producción 1" class="riddle-carousel-img active" />
+                  <img src="zeus2.jpeg" alt="Dibujo de Zeus - producción 2" class="riddle-carousel-img" />
+                </div>
+                <button type="button" class="riddle-carousel-btn prev" aria-label="Dibujo anterior">‹</button>
+                <button type="button" class="riddle-carousel-btn next" aria-label="Dibujo siguiente">›</button>
+                <div class="riddle-carousel-dots">
+                  <button type="button" class="riddle-dot-btn active" data-index="0" aria-label="Ver dibujo 1"></button>
+                  <button type="button" class="riddle-dot-btn" data-index="1" aria-label="Ver dibujo 2"></button>
+                </div>
+              </div>
+              <h3 class="riddle-answer-name">¡El Partenón! 🏦</h3>
+              <p class="riddle-answer-fact">Templo griego.</p>
+              <button type="button" class="riddle-flip-btn riddle-flip-back">
+                <span>↩ Volver</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+<!-- ADIVINANZA 4 · ??????? -->
+        <div class="riddle-card" data-riddle="2">
+          <div class="riddle-inner">
+
+            <div class="riddle-face riddle-front">
+              <div class="riddle-number">IV</div>
+              <span class="riddle-icon"></span>
+              <h2 class="riddle-label">Adivinanza 4</h2>
+             
+              <audio class="riddle-audio" controls preload="none">
+                <source src="Partenon.mp4" type="audio/mpeg" />
+              </audio>
+              <button type="button" class="riddle-flip-btn">
+                <span>🔍 Ver qué es</span>
+              </button>
+            </div>
+
+           <div class="riddle-face riddle-back">
+              <div class="riddle-img-carousel">
+                <div class="riddle-img-track">
+                   <!-- agregar imagenessssssssssss PARTENÓN -->
+                  <img src="atenea.jpeg" alt="Dibujo de Zeus - producción 1" class="riddle-carousel-img active" />
+                  <img src="zeus2.jpeg" alt="Dibujo de Zeus - producción 2" class="riddle-carousel-img" />
+                </div>
+                <button type="button" class="riddle-carousel-btn prev" aria-label="Dibujo anterior">‹</button>
+                <button type="button" class="riddle-carousel-btn next" aria-label="Dibujo siguiente">›</button>
+                <div class="riddle-carousel-dots">
+                  <button type="button" class="riddle-dot-btn active" data-index="0" aria-label="Ver dibujo 1"></button>
+                  <button type="button" class="riddle-dot-btn" data-index="1" aria-label="Ver dibujo 2"></button>
+                </div>
+              </div>
+              <h3 class="riddle-answer-name">¡El Partenón! 🏦</h3>
+              <p class="riddle-answer-fact">Templo griego.</p>
+              <button type="button" class="riddle-flip-btn riddle-flip-back">
+                <span>↩ Volver</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <p class="adiv-progress" id="adivProgress">0 de 4 adivinanzas descubiertas 🏺</p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-stars">⭐🌟✨🌟⭐</div>
+      <p class="footer-school">🏫 Sala de 5 años "B" · Colegio ICEI</p>
+      <p class="footer-teachers">Docente: Fernanda García</p>
+      <p class="footer-year">ABP "Tesoros del Pasado" · 2026</p>
+      <div class="footer-emojis">🦴 🐫 🏛️ ⚔️</div>
+    </div>
+  </footer>
+
+  <script src="adivinanzas-script.js"></script>
+</body>
+</html>
