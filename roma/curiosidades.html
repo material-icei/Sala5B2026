@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiosidades de Roma · Tesoros del Pasado · ICEI</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="curiosidades-styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="roma-body">
+
+  <!-- Partículas de fondo (mismo efecto que la landing) -->
+  <div class="particles" id="particles"></div>
+
+  <!-- MINI HERO -->
+  <header class="roma-hero">
+    <a href="../index.html" class="roma-back">← Volver a Tesoros del Pasado</a>
+
+    <div class="roma-hero-deco deco-a">⚔️</div>
+    <div class="roma-hero-deco deco-b">🏛️</div>
+    <div class="roma-hero-deco deco-c">🌿</div>
+    <div class="roma-hero-deco deco-d">🛡️</div>
+
+    <div class="roma-hero-content">
+      <p class="school-tag">🏛️ Sala de 5 años "B" · Colegio ICEI</p>
+      <h1 class="roma-title">
+        <span>¿Sabías qué?</span>
+        <span class="roma-title-sub">Curiosidades de la Antigua Roma</span>
+      </h1>
+      <p class="roma-subtitle">
+        Escuchá cada curiosidad 🔊 y mirá el dibujo que hicimos<br/>
+        sobre los romanos.
+      </p>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg-main)"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- GRID DE CURIOSIDADES -->
+  <main class="roma-main">
+    <div class="container">
+
+      <div class="roma-grid">
+
+        <!-- CURIOSIDAD 1 -->
+        <div class="curio-card">
+          <div class="curio-number">I</div>
+          <span class="curio-icon">⚔️</span>
+          <h2 class="curio-label">Curiosidad 1</h2>
+          <img src="curiosidad1.jpeg" alt="Dibujo de un alumno sobre los romanos" class="curio-img" />
+          <audio class="curio-audio" controls preload="none">
+            <source src="curiosidades1.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- CURIOSIDAD 2 -->
+        <div class="curio-card">
+          <div class="curio-number">II</div>
+          <span class="curio-icon">🏛️</span>
+          <h2 class="curio-label">Curiosidad 2</h2>
+          <img src="curiosidad2.jpeg" alt="Dibujo de un alumno sobre los romanos" class="curio-img" />
+          <audio class="curio-audio" controls preload="none">
+            <source src="curiosidades2.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- CURIOSIDAD 3 -->
+        <div class="curio-card">
+          <div class="curio-number">III</div>
+          <span class="curio-icon">🌿</span>
+          <h2 class="curio-label">Curiosidad 3</h2>
+          <img src="curiosidad3.jpeg" alt="Dibujo de un alumno sobre los romanos" class="curio-img" />
+          <audio class="curio-audio" controls preload="none">
+            <source src="curiosidades3.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-stars">⭐🌟✨🌟⭐</div>
+      <p class="footer-school">🏫 Sala de 5 años "B" · Colegio ICEI</p>
+      <p class="footer-teachers">Docente: Fernanda García</p>
+      <p class="footer-year">ABP "Tesoros del Pasado" · 2026</p>
+      <div class="footer-emojis">🦴 🐫 🏛️ ⚔️</div>
+    </div>
+  </footer>
+
+  <script src="curiosidades-script.js"></script>
+</body>
+</html>
